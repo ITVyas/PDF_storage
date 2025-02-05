@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF storage</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <script src="./index.js"></script>
+</head>
+<body>
+    <nav>
+        <span class="logo-label">PDF/Site Storage</span>
+        <button id="add-new-btn">New</button>
+        <input type="text" class="search-filter" placeholder="Search">
+    </nav>
+    <div class="no-content-text hidden">
+        No Content Here Right Now
+    </div>
+    <div class="window-menu-container add-form-container">
+        <form action="" class="pdf-info-form">
+            <span class="cross">×</span>
+            <span class="switch-page">notes</span>
+            <span class="form-info-container">
+                <h2>Book/Site Info</h2>
+                <input name="title" placeholder="Title" class="info-title" type="text" required>
+                <input name="bookName" placeholder="Name" class="info-book" type="text" required>
+                <input name="link" placeholder="Link" class="info-link" type="url" pattern="https?://[^\s]+|file:///[^\s]+" required>
+                <textarea name="description" placeholder="Description" class="info-description" type="text"></textarea>
+            </span>
+            <span class="form-notes-container hide">
+                <h2>Notes For Book/Site</h2>
+                <div class="notes-fields-container">
+                </div>
+            </span>
+            <div class="submit-button-container">
+                <button class="submit-form-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

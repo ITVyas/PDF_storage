@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 254, 249);
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+body:has(.no-scroll) {
+    overflow: hidden;
+}
+
+.info-container {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    background: rgb(255, 254, 249);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.info-container .cross {
+    position: absolute;
+    font-size: 40px;
+    top: 5px;
+    right: 15px;
+    user-select: none;
+}
+
+.info-container .edit {
+    position: absolute;
+    top: 13px;
+    right: 45px;
+    font-size: 24px;
+    transform: scale(-1, 1);
+    user-select: none;
+}
+
+.info-container .cross:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.info-container .edit:hover {
+    color: rgb(211, 144, 21);
+    cursor: pointer;
+}
+
+.info-container.dark {
+    background: rgb(228, 226, 215);
+}
+
+.title {
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: lighter;
+}
+
+.book-name {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.book-name:hover {
+    cursor: pointer;
+}
+
+.info-container:hover .book-name {
+    text-decoration: underline;
+}
+
+.description {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    text-indent: 30px;
+    font-size: 18px;
+}
+
+.last-notes-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+nav {
+    display: flex;
+    position: relative;
+    background-color: rgb(156, 135, 89);
+    height: 50px;
+    margin: 0;
+    box-shadow: 0px 1px 3px rgb(162, 162, 162);
+    z-index: 2;
+    padding: 0 20px;
+}
+
+nav .logo-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+    color: rgb(83, 71, 48);
+    text-shadow: 1px 1px 2px rgb(108, 91, 62);
+    font-size: 24px;
+}
+
+nav button {
+    margin-left: 20px;
+    background: none;
+    border: none;
+    color: rgb(83, 71, 48);
+    font-size: 22px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.window-menu-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+body:has(.add-form-now) .add-form-container {
+    display: flex;
+}
+
+body:has(.no-scroll) .window-menu-container:not(.add-form-container) {
+    display: flex;
+}
+
+
+.pdf-info-form {
+    min-width: 500px;
+    min-height: 300px;
+    display: block;
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.pdf-info-form h2 {
+    display: block;
+    width: fit-content;
+    margin: 1em auto;
+    text-align: center;
+}
+
+.pdf-info-form input {
+    padding: 0.5em;
+    display: block;
+    width: 350px;
+    margin: 20px 60px;
+    font-size: 20px;
+    border: 2px solid rgb(193, 193, 193);
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px rgb(223, 223, 223), -1px -1px 2px rgb(223, 223, 223);
+}
+
+.pdf-info-form input:focus {
+    border: 2px solid rgb(96, 100, 220);
+}
+
+.pdf-info-form .cross {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 40px;
+    height: 25px;
+    width: 25px;
+}
+
+.pdf-info-form .switch-page {
+    display: block;
+    position: absolute;
+    right: 80px;
+    top: 20px;
+    font-size: 22px;
+    height: 25px;
+    width: 25px;
+}
+
+.pdf-info-form .cross:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.pdf-info-form .switch-page:hover {
+    color: rgb(187, 122, 1);
+    cursor: pointer;
+}
+
+.info-description {
+    display: block;
+    width: 350px;
+    margin: 20px 60px;
+    font-size: 20px;
+    resize: vertical;
+    height: 2.3em;
+    min-height: 1.2em;
+    max-height: 4.5em;
+    padding: 0.5em;
+    border: 2px solid rgb(193, 193, 193);
+    border-radius: 6px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 1px 1px 2px rgb(223, 223, 223), -1px -1px 2px rgb(223, 223, 223);
+}
+
+.info-description:focus {
+    outline: none;
+    border: 2px solid rgb(96, 100, 220);
+}
+
+.submit-form-btn {
+    display: block;
+    width: 350px;
+    font-size: 20px;
+    height: 2em;
+    margin: 20px auto;
+    color: white;
+    background-color: rgb(90, 94, 213);
+    border: none;
+    border-radius: 10px;
+}
+
+.submit-form-btn:hover {
+    cursor: pointer;
+    background-color: rgb(79, 83, 201);
+}
+
+.pdf-info-form .form-info-container.hide {
+    display: none;
+}
+
+.pdf-info-form .form-info-container.hide, .pdf-info-form .form-notes-container.hide {
+    display: none;
+}
+
+.remove-element-warning {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.remove-element-warning h3 {
+    text-align: center;
+    display: block;
+    width: fit-content;
+    font-size: 20px;
+    margin: 30px 30px;
+}
+
+.remove-element-warning button {
+    display: block;
+    border: none;
+    width: 70px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgb(218, 218, 218), -1px -1px 3px rgb(218, 218, 218);
+}
+
+.remove-element-warning .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remove-element-warning .no {
+    background-color: rgb(255, 168, 168);
+}
+
+.remove-element-warning .yes {
+    background-color: rgb(182, 255, 180);
+}
+
+.remove-element-warning .no:hover {
+    cursor: pointer;
+    background-color: rgb(234, 150, 150);
+}
+
+.remove-element-warning .yes:hover {
+    cursor: pointer;
+    background-color: rgb(153, 226, 150);
+}
+
+.notes-fields-container {
+    max-height: 360px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.notes-fields-container::-webkit-scrollbar {
+    background: none;
+}
+
+.notes-fields-container::-webkit-scrollbar-thumb {
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.notes-fields-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(154, 197, 211);
+}
+
+
+.info-about-skipped-notes {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page-nav-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: 24px;
+    user-select: none;
+}
+
+.page-nav-arrow.endpoint {
+    color: gray;
+}
+
+.page-nav-arrow:not(.endpoint):hover {
+    cursor: pointer;
+    background-color: rgb(220, 220, 220);
+}
+
+.page-number-info {
+    font-size: 24px;
+    margin: 0 20px;
+}
+
+nav .search-filter {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.15);
+    height: 24px;
+    margin: auto 20px;
+    color: rgb(239, 210, 181);
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 16px;
+}
+
+nav .search-filter::placeholder {
+    color: rgb(69, 39, 16);
+    margin-left: 5px;
+}
+
+.no-content-text {
+    display: flex;
+    width: 50%;
+    height: 50vh;
+    margin: auto auto;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: gray;
+}
+
+.no-content-text.hidden {
+    display: none;
+}
